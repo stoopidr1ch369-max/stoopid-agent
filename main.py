@@ -269,7 +269,11 @@ def main():
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, keyword_reply))
 
     log.info("STOOPID AGENT ACTIVE")
-    app.run_polling()
+  import asyncio
 
-if __name__ == "__main__":
-    main()  
+async def main():
+    print("STOOPID AGENT ACTIVE")
+    await app.run_polling()
+
+if name == "main":
+    asyncio.run(main())  
